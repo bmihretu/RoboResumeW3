@@ -1,64 +1,60 @@
 package resume;
 
 public class Skills {
-    private String Expert = "";
-    private String Advanced = "";
-    private String Intermediate ="";
-    private String Novice = "";
-    private String Fundamental = "";
 
-    public Skills(){
+    public class Skill {
+        private String skillType;
+        private String competencyProficiency;
+        private int level;
+
+        public Skill(String skillType, int level) {
+            this.skillType = skillType;
+            this.level = level;
+            switch (this.level) {
+                case 1:
+                    this.competencyProficiency = "Fundamental";
+                    break;
+                case 2:
+                    this.competencyProficiency = "Novice";
+                    break;
+                case 3:
+                    this.competencyProficiency = "Intermediate";
+                    break;
+                case 4:
+                    this.competencyProficiency = "Advanced";
+                    break;
+                case 5:
+                    this.competencyProficiency = "Expert";
+                    break;
+                default:
+                    System.out.println("Your level will be automatically set to Fundamental");
+                    this.competencyProficiency = "Fundamental";
+            }
+
 
         }
 
+        public String getSkillName() {
+            return skillType;
+        }
 
-    public Skills(String Expert, String Advanced, String Intermediate, String Novice, String Fundamental){
-        this.Expert = Expert;
-        this.Advanced = Advanced;
-        this.Intermediate = Intermediate;
-        this.Novice = Novice;
-        this.Fundamental = Fundamental;
+        public void setSkillName(String skillName) {
+            this.skillType = skillName;
+        }
 
-    }
+        public String getCompetencyProficiency() {
+            return competencyProficiency;
+        }
 
-    public String getExpert() {
-        return Expert;
-    }
+        public void setCompetencyProficiency(String competencyProficiency) {
+            this.competencyProficiency = competencyProficiency;
+        }
 
-    public void setExpert(String expert) {
-        Expert = expert;
-    }
-
-    public String getAdvanced() {
-        return Advanced;
-    }
-
-    public void setAdvanced(String advanced) {
-        Advanced = advanced;
-    }
-
-    public String getIntermediate() {
-        return Intermediate;
-    }
-
-    public void setIntermediate(String intermediate) {
-        Intermediate = intermediate;
-    }
-
-    public String getNovice() {
-        return Novice;
-    }
-
-    public void setNovice(String novice) {
-        Novice = novice;
-    }
-
-    public String getFundamental() {
-        return Fundamental;
-    }
-
-    public void setFundamental(String fundamental) {
-        Fundamental = fundamental;
+        @Override
+        public String toString() {
+            String result;
+            result = "\n" + " " + this.skillType + "- Competency Proficiency: " + this.competencyProficiency + "\n";
+            return result;
+        }
     }
 }
-

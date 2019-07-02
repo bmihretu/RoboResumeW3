@@ -3,16 +3,18 @@ package resume;
 public class Education {
         private String University;
         private String Major;
-        private String Date;
+        private int Date;
+        private String Degree;
 
     public Education(){
 
     }
 
-    public Education(String University, String Major, String Date){
+    public Education(String University, String Major, int Date, String Degree){
         this.University = University;
         this.Major = Major;
         this.Date = Date;
+        this.Degree = Degree;
     }
 
     public String getUniversity() {
@@ -31,16 +33,29 @@ public class Education {
         Major = major;
     }
 
-    public String getDate() {
+    public int getDate() {
         return Date;
     }
 
-    public void setDate(String date) {
+    public void setDate(int date) {
         Date = date;
     }
 
+    public String getDegree() {
+        return Degree;
+    }
+
+    public void setDegree(String degree) {
+        Degree = degree;
+
+    }
+    public String toString() {
+
+        return this.getDegree() + " in " + this.getMajor() + ",\n" + this.getUniversity() + ", " + this.getDate();
+
+    }
+
+}// end cls
 
 
 
-
-}
